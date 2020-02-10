@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def fun():
     name = request.args.get("name", "World")
-    return jsonify({"response":"Hello " + name})
+    return jsonify({"response":"Hola " + name})
 #    return "Please, specify a route"
 #    
 
