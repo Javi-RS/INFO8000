@@ -517,3 +517,1663 @@ SyntaxError: invalid syntax
 [2020-02-11 03:06:05 +0000] [2912] [INFO] Worker exiting (pid: 2912)
 [2020-02-11 03:06:05 +0000] [2909] [INFO] Shutting down: Master
 [2020-02-11 03:06:05 +0000] [2909] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:14 +0000] [2938] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:14 +0000] [2938] [INFO] Listening at: http://127.0.0.1:8000 (2938)
+[2020-02-11 03:07:14 +0000] [2938] [INFO] Using worker: sync
+[2020-02-11 03:07:14 +0000] [2941] [INFO] Booting worker with pid: 2941
+[2020-02-11 03:07:14 +0000] [2941] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:14 +0000] [2941] [INFO] Worker exiting (pid: 2941)
+[2020-02-11 03:07:14 +0000] [2938] [INFO] Shutting down: Master
+[2020-02-11 03:07:14 +0000] [2938] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:15 +0000] [2942] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:15 +0000] [2942] [INFO] Listening at: http://127.0.0.1:8000 (2942)
+[2020-02-11 03:07:15 +0000] [2942] [INFO] Using worker: sync
+[2020-02-11 03:07:15 +0000] [2945] [INFO] Booting worker with pid: 2945
+[2020-02-11 03:07:15 +0000] [2945] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:15 +0000] [2945] [INFO] Worker exiting (pid: 2945)
+[2020-02-11 03:07:15 +0000] [2946] [INFO] Booting worker with pid: 2946
+[2020-02-11 03:07:15 +0000] [2947] [INFO] Booting worker with pid: 2947
+[2020-02-11 03:07:15 +0000] [2946] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:15 +0000] [2946] [INFO] Worker exiting (pid: 2946)
+[2020-02-11 03:07:15 +0000] [2947] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:15 +0000] [2947] [INFO] Worker exiting (pid: 2947)
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+    self.spawn_workers()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2020-02-11 03:07:18 +0000] [2948] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:18 +0000] [2948] [INFO] Listening at: http://127.0.0.1:8000 (2948)
+[2020-02-11 03:07:18 +0000] [2948] [INFO] Using worker: sync
+[2020-02-11 03:07:18 +0000] [2951] [INFO] Booting worker with pid: 2951
+[2020-02-11 03:07:18 +0000] [2951] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:18 +0000] [2952] [INFO] Booting worker with pid: 2952
+[2020-02-11 03:07:18 +0000] [2951] [INFO] Worker exiting (pid: 2951)
+[2020-02-11 03:07:18 +0000] [2952] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:18 +0000] [2952] [INFO] Worker exiting (pid: 2952)
+[2020-02-11 03:07:18 +0000] [2953] [INFO] Booting worker with pid: 2953
+[2020-02-11 03:07:18 +0000] [2953] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:18 +0000] [2953] [INFO] Worker exiting (pid: 2953)
+[2020-02-11 03:07:18 +0000] [2948] [INFO] Shutting down: Master
+[2020-02-11 03:07:18 +0000] [2948] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:21 +0000] [2954] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:21 +0000] [2954] [INFO] Listening at: http://127.0.0.1:8000 (2954)
+[2020-02-11 03:07:21 +0000] [2954] [INFO] Using worker: sync
+[2020-02-11 03:07:21 +0000] [2957] [INFO] Booting worker with pid: 2957
+[2020-02-11 03:07:21 +0000] [2957] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:21 +0000] [2957] [INFO] Worker exiting (pid: 2957)
+[2020-02-11 03:07:21 +0000] [2954] [INFO] Shutting down: Master
+[2020-02-11 03:07:21 +0000] [2954] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:23 +0000] [2960] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:23 +0000] [2960] [INFO] Listening at: http://127.0.0.1:8000 (2960)
+[2020-02-11 03:07:23 +0000] [2960] [INFO] Using worker: sync
+[2020-02-11 03:07:23 +0000] [2963] [INFO] Booting worker with pid: 2963
+[2020-02-11 03:07:23 +0000] [2963] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:23 +0000] [2963] [INFO] Worker exiting (pid: 2963)
+[2020-02-11 03:07:23 +0000] [2960] [INFO] Shutting down: Master
+[2020-02-11 03:07:23 +0000] [2960] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:24 +0000] [2964] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:24 +0000] [2964] [INFO] Listening at: http://127.0.0.1:8000 (2964)
+[2020-02-11 03:07:24 +0000] [2964] [INFO] Using worker: sync
+[2020-02-11 03:07:24 +0000] [2967] [INFO] Booting worker with pid: 2967
+[2020-02-11 03:07:24 +0000] [2967] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:24 +0000] [2967] [INFO] Worker exiting (pid: 2967)
+[2020-02-11 03:07:24 +0000] [2968] [INFO] Booting worker with pid: 2968
+[2020-02-11 03:07:24 +0000] [2968] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:24 +0000] [2968] [INFO] Worker exiting (pid: 2968)
+[2020-02-11 03:07:25 +0000] [2964] [INFO] Shutting down: Master
+[2020-02-11 03:07:25 +0000] [2964] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:27 +0000] [2971] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:27 +0000] [2971] [INFO] Listening at: http://127.0.0.1:8000 (2971)
+[2020-02-11 03:07:27 +0000] [2971] [INFO] Using worker: sync
+[2020-02-11 03:07:27 +0000] [2974] [INFO] Booting worker with pid: 2974
+[2020-02-11 03:07:27 +0000] [2974] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:27 +0000] [2974] [INFO] Worker exiting (pid: 2974)
+[2020-02-11 03:07:27 +0000] [2975] [INFO] Booting worker with pid: 2975
+[2020-02-11 03:07:27 +0000] [2975] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:27 +0000] [2975] [INFO] Worker exiting (pid: 2975)
+[2020-02-11 03:07:27 +0000] [2976] [INFO] Booting worker with pid: 2976
+[2020-02-11 03:07:27 +0000] [2976] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:27 +0000] [2976] [INFO] Worker exiting (pid: 2976)
+[2020-02-11 03:07:27 +0000] [2971] [INFO] Shutting down: Master
+[2020-02-11 03:07:27 +0000] [2971] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:07:30 +0000] [2977] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:07:30 +0000] [2977] [INFO] Listening at: http://127.0.0.1:8000 (2977)
+[2020-02-11 03:07:30 +0000] [2977] [INFO] Using worker: sync
+[2020-02-11 03:07:30 +0000] [2980] [INFO] Booting worker with pid: 2980
+[2020-02-11 03:07:30 +0000] [2980] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 31
+    @app.route('/read/all', methods=['GET']))
+                                            ^
+SyntaxError: invalid syntax
+[2020-02-11 03:07:30 +0000] [2980] [INFO] Worker exiting (pid: 2980)
+[2020-02-11 03:07:30 +0000] [2977] [INFO] Shutting down: Master
+[2020-02-11 03:07:30 +0000] [2977] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:09:34 +0000] [3006] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:09:34 +0000] [3006] [INFO] Listening at: http://127.0.0.1:8000 (3006)
+[2020-02-11 03:09:34 +0000] [3006] [INFO] Using worker: sync
+[2020-02-11 03:09:34 +0000] [3009] [INFO] Booting worker with pid: 3009
+[2020-02-11 03:09:34 +0000] [3010] [INFO] Booting worker with pid: 3010
+[2020-02-11 03:09:34 +0000] [3011] [INFO] Booting worker with pid: 3011
+[2020-02-11 03:09:39 +0000] [3006] [INFO] Handling signal: term
+[2020-02-11 03:09:39 +0000] [3009] [INFO] Worker exiting (pid: 3009)
+[2020-02-11 03:09:39 +0000] [3010] [INFO] Worker exiting (pid: 3010)
+[2020-02-11 03:09:39 +0000] [3011] [INFO] Worker exiting (pid: 3011)
+[2020-02-11 03:09:40 +0000] [3006] [INFO] Shutting down: Master
+[2020-02-11 03:09:40 +0000] [3027] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:09:40 +0000] [3027] [INFO] Listening at: http://127.0.0.1:8000 (3027)
+[2020-02-11 03:09:40 +0000] [3027] [INFO] Using worker: sync
+[2020-02-11 03:09:40 +0000] [3030] [INFO] Booting worker with pid: 3030
+[2020-02-11 03:09:40 +0000] [3031] [INFO] Booting worker with pid: 3031
+[2020-02-11 03:09:40 +0000] [3032] [INFO] Booting worker with pid: 3032
+[2020-02-11 03:13:03 +0000] [3027] [INFO] Handling signal: term
+[2020-02-11 03:13:03 +0000] [3030] [INFO] Worker exiting (pid: 3030)
+[2020-02-11 03:13:03 +0000] [3031] [INFO] Worker exiting (pid: 3031)
+[2020-02-11 03:13:03 +0000] [3032] [INFO] Worker exiting (pid: 3032)
+[2020-02-11 03:13:03 +0000] [3027] [INFO] Shutting down: Master
+[2020-02-11 03:13:03 +0000] [3067] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:13:03 +0000] [3067] [INFO] Listening at: http://127.0.0.1:8000 (3067)
+[2020-02-11 03:13:03 +0000] [3067] [INFO] Using worker: sync
+[2020-02-11 03:13:03 +0000] [3070] [INFO] Booting worker with pid: 3070
+[2020-02-11 03:13:03 +0000] [3071] [INFO] Booting worker with pid: 3071
+[2020-02-11 03:13:03 +0000] [3072] [INFO] Booting worker with pid: 3072
+[2020-02-11 03:16:43 +0000] [3067] [INFO] Handling signal: term
+[2020-02-11 03:16:43 +0000] [3070] [INFO] Worker exiting (pid: 3070)
+[2020-02-11 03:16:43 +0000] [3071] [INFO] Worker exiting (pid: 3071)
+[2020-02-11 03:16:43 +0000] [3072] [INFO] Worker exiting (pid: 3072)
+[2020-02-11 03:16:43 +0000] [3067] [INFO] Shutting down: Master
+[2020-02-11 03:16:43 +0000] [3119] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:16:43 +0000] [3119] [INFO] Listening at: http://127.0.0.1:8000 (3119)
+[2020-02-11 03:16:43 +0000] [3119] [INFO] Using worker: sync
+[2020-02-11 03:16:43 +0000] [3122] [INFO] Booting worker with pid: 3122
+[2020-02-11 03:16:43 +0000] [3122] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 33
+    if 'table' = books:
+               ^
+SyntaxError: invalid syntax
+[2020-02-11 03:16:43 +0000] [3122] [INFO] Worker exiting (pid: 3122)
+[2020-02-11 03:16:43 +0000] [3119] [INFO] Shutting down: Master
+[2020-02-11 03:16:43 +0000] [3119] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:16:45 +0000] [3123] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:16:45 +0000] [3123] [INFO] Listening at: http://127.0.0.1:8000 (3123)
+[2020-02-11 03:16:45 +0000] [3123] [INFO] Using worker: sync
+[2020-02-11 03:16:45 +0000] [3126] [INFO] Booting worker with pid: 3126
+[2020-02-11 03:16:45 +0000] [3126] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 33
+    if 'table' = books:
+               ^
+SyntaxError: invalid syntax
+[2020-02-11 03:16:45 +0000] [3126] [INFO] Worker exiting (pid: 3126)
+[2020-02-11 03:16:45 +0000] [3127] [INFO] Booting worker with pid: 3127
+[2020-02-11 03:16:45 +0000] [3127] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 33
+    if 'table' = books:
+               ^
+SyntaxError: invalid syntax
+[2020-02-11 03:16:45 +0000] [3127] [INFO] Worker exiting (pid: 3127)
+[2020-02-11 03:16:45 +0000] [3123] [INFO] Shutting down: Master
+[2020-02-11 03:16:45 +0000] [3123] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:16:47 +0000] [3128] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:16:47 +0000] [3128] [INFO] Listening at: http://127.0.0.1:8000 (3128)
+[2020-02-11 03:16:47 +0000] [3128] [INFO] Using worker: sync
+[2020-02-11 03:16:47 +0000] [3131] [INFO] Booting worker with pid: 3131
+[2020-02-11 03:16:47 +0000] [3131] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 33
+    if 'table' = books:
+               ^
+SyntaxError: invalid syntax
+[2020-02-11 03:16:47 +0000] [3131] [INFO] Worker exiting (pid: 3131)
+[2020-02-11 03:16:47 +0000] [3132] [INFO] Booting worker with pid: 3132
+[2020-02-11 03:16:47 +0000] [3132] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 33
+    if 'table' = books:
+               ^
+SyntaxError: invalid syntax
+[2020-02-11 03:16:47 +0000] [3132] [INFO] Worker exiting (pid: 3132)
+[2020-02-11 03:16:47 +0000] [3128] [INFO] Shutting down: Master
+[2020-02-11 03:16:47 +0000] [3128] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:16:50 +0000] [3135] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:16:50 +0000] [3135] [INFO] Listening at: http://127.0.0.1:8000 (3135)
+[2020-02-11 03:16:50 +0000] [3135] [INFO] Using worker: sync
+[2020-02-11 03:16:50 +0000] [3138] [INFO] Booting worker with pid: 3138
+[2020-02-11 03:16:50 +0000] [3138] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 33
+    if 'table' = books:
+               ^
+SyntaxError: invalid syntax
+[2020-02-11 03:16:50 +0000] [3138] [INFO] Worker exiting (pid: 3138)
+[2020-02-11 03:16:50 +0000] [3135] [INFO] Shutting down: Master
+[2020-02-11 03:16:50 +0000] [3135] [INFO] Reason: Worker failed to boot.
+[2020-02-11 03:17:55 +0000] [3160] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:17:55 +0000] [3160] [INFO] Listening at: http://127.0.0.1:8000 (3160)
+[2020-02-11 03:17:55 +0000] [3160] [INFO] Using worker: sync
+[2020-02-11 03:17:55 +0000] [3163] [INFO] Booting worker with pid: 3163
+[2020-02-11 03:17:55 +0000] [3164] [INFO] Booting worker with pid: 3164
+[2020-02-11 03:17:55 +0000] [3165] [INFO] Booting worker with pid: 3165
+[2020-02-11 03:21:36 +0000] [3160] [INFO] Handling signal: term
+[2020-02-11 03:21:36 +0000] [3163] [INFO] Worker exiting (pid: 3163)
+[2020-02-11 03:21:36 +0000] [3164] [INFO] Worker exiting (pid: 3164)
+[2020-02-11 03:21:36 +0000] [3165] [INFO] Worker exiting (pid: 3165)
+[2020-02-11 03:21:37 +0000] [3160] [INFO] Shutting down: Master
+[2020-02-11 03:21:37 +0000] [3213] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:21:37 +0000] [3213] [INFO] Listening at: http://127.0.0.1:8000 (3213)
+[2020-02-11 03:21:37 +0000] [3213] [INFO] Using worker: sync
+[2020-02-11 03:21:37 +0000] [3216] [INFO] Booting worker with pid: 3216
+[2020-02-11 03:21:37 +0000] [3217] [INFO] Booting worker with pid: 3217
+[2020-02-11 03:21:37 +0000] [3218] [INFO] Booting worker with pid: 3218
+[2020-02-11 03:27:19 +0000] [3213] [INFO] Handling signal: term
+[2020-02-11 03:27:19 +0000] [3216] [INFO] Worker exiting (pid: 3216)
+[2020-02-11 03:27:19 +0000] [3217] [INFO] Worker exiting (pid: 3217)
+[2020-02-11 03:27:19 +0000] [3218] [INFO] Worker exiting (pid: 3218)
+[2020-02-11 03:27:19 +0000] [3213] [INFO] Shutting down: Master
+[2020-02-11 03:27:20 +0000] [3319] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:27:20 +0000] [3319] [INFO] Listening at: http://127.0.0.1:8000 (3319)
+[2020-02-11 03:27:20 +0000] [3319] [INFO] Using worker: sync
+[2020-02-11 03:27:20 +0000] [3322] [INFO] Booting worker with pid: 3322
+[2020-02-11 03:27:20 +0000] [3323] [INFO] Booting worker with pid: 3323
+[2020-02-11 03:27:20 +0000] [3324] [INFO] Booting worker with pid: 3324
+[2020-02-11 03:53:11 +0000] [3319] [INFO] Handling signal: term
+[2020-02-11 03:53:11 +0000] [3322] [INFO] Worker exiting (pid: 3322)
+[2020-02-11 03:53:11 +0000] [3323] [INFO] Worker exiting (pid: 3323)
+[2020-02-11 03:53:11 +0000] [3324] [INFO] Worker exiting (pid: 3324)
+[2020-02-11 03:53:11 +0000] [3319] [INFO] Shutting down: Master
+[2020-02-11 03:53:12 +0000] [3665] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:53:12 +0000] [3665] [INFO] Listening at: http://127.0.0.1:8000 (3665)
+[2020-02-11 03:53:12 +0000] [3665] [INFO] Using worker: sync
+[2020-02-11 03:53:12 +0000] [3668] [INFO] Booting worker with pid: 3668
+[2020-02-11 03:53:12 +0000] [3669] [INFO] Booting worker with pid: 3669
+[2020-02-11 03:53:12 +0000] [3670] [INFO] Booting worker with pid: 3670
+[2020-02-11 03:53:47,641] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 42, in read_all
+    all_books = cur.execute('SELECT * FROM books;').fetchall()
+sqlite3.OperationalError: no such table: books
+[2020-02-11 03:54:38 +0000] [3665] [INFO] Handling signal: term
+[2020-02-11 03:54:38 +0000] [3668] [INFO] Worker exiting (pid: 3668)
+[2020-02-11 03:54:38 +0000] [3669] [INFO] Worker exiting (pid: 3669)
+[2020-02-11 03:54:38 +0000] [3670] [INFO] Worker exiting (pid: 3670)
+[2020-02-11 03:54:38 +0000] [3665] [INFO] Shutting down: Master
+[2020-02-11 03:54:39 +0000] [3691] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 03:54:39 +0000] [3691] [INFO] Listening at: http://127.0.0.1:8000 (3691)
+[2020-02-11 03:54:39 +0000] [3691] [INFO] Using worker: sync
+[2020-02-11 03:54:39 +0000] [3694] [INFO] Booting worker with pid: 3694
+[2020-02-11 03:54:39 +0000] [3695] [INFO] Booting worker with pid: 3695
+[2020-02-11 03:54:39 +0000] [3696] [INFO] Booting worker with pid: 3696
+[2020-02-11 04:16:23 +0000] [3691] [INFO] Handling signal: term
+[2020-02-11 04:16:23 +0000] [3694] [INFO] Worker exiting (pid: 3694)
+[2020-02-11 04:16:23 +0000] [3695] [INFO] Worker exiting (pid: 3695)
+[2020-02-11 04:16:23 +0000] [3696] [INFO] Worker exiting (pid: 3696)
+[2020-02-11 04:16:24 +0000] [3691] [INFO] Shutting down: Master
+[2020-02-11 04:16:24 +0000] [3943] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:16:24 +0000] [3943] [INFO] Listening at: http://127.0.0.1:8000 (3943)
+[2020-02-11 04:16:24 +0000] [3943] [INFO] Using worker: sync
+[2020-02-11 04:16:24 +0000] [3946] [INFO] Booting worker with pid: 3946
+[2020-02-11 04:16:24 +0000] [3946] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:24 +0000] [3946] [INFO] Worker exiting (pid: 3946)
+[2020-02-11 04:16:24 +0000] [3943] [INFO] Shutting down: Master
+[2020-02-11 04:16:24 +0000] [3943] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:16:25 +0000] [3947] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:16:25 +0000] [3947] [INFO] Listening at: http://127.0.0.1:8000 (3947)
+[2020-02-11 04:16:25 +0000] [3947] [INFO] Using worker: sync
+[2020-02-11 04:16:25 +0000] [3950] [INFO] Booting worker with pid: 3950
+[2020-02-11 04:16:25 +0000] [3950] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:25 +0000] [3950] [INFO] Worker exiting (pid: 3950)
+[2020-02-11 04:16:25 +0000] [3951] [INFO] Booting worker with pid: 3951
+[2020-02-11 04:16:25 +0000] [3951] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:25 +0000] [3951] [INFO] Worker exiting (pid: 3951)
+[2020-02-11 04:16:25 +0000] [3952] [INFO] Booting worker with pid: 3952
+[2020-02-11 04:16:25 +0000] [3952] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:25 +0000] [3952] [INFO] Worker exiting (pid: 3952)
+[2020-02-11 04:16:25 +0000] [3947] [INFO] Shutting down: Master
+[2020-02-11 04:16:25 +0000] [3947] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:16:28 +0000] [3953] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:16:28 +0000] [3953] [INFO] Listening at: http://127.0.0.1:8000 (3953)
+[2020-02-11 04:16:28 +0000] [3953] [INFO] Using worker: sync
+[2020-02-11 04:16:28 +0000] [3956] [INFO] Booting worker with pid: 3956
+[2020-02-11 04:16:28 +0000] [3956] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:28 +0000] [3956] [INFO] Worker exiting (pid: 3956)
+[2020-02-11 04:16:28 +0000] [3953] [INFO] Shutting down: Master
+[2020-02-11 04:16:28 +0000] [3953] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:16:31 +0000] [3959] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:16:31 +0000] [3959] [INFO] Listening at: http://127.0.0.1:8000 (3959)
+[2020-02-11 04:16:31 +0000] [3959] [INFO] Using worker: sync
+[2020-02-11 04:16:31 +0000] [3962] [INFO] Booting worker with pid: 3962
+[2020-02-11 04:16:31 +0000] [3962] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:31 +0000] [3962] [INFO] Worker exiting (pid: 3962)
+[2020-02-11 04:16:31 +0000] [3963] [INFO] Booting worker with pid: 3963
+[2020-02-11 04:16:31 +0000] [3963] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:31 +0000] [3963] [INFO] Worker exiting (pid: 3963)
+[2020-02-11 04:16:31 +0000] [3964] [INFO] Booting worker with pid: 3964
+[2020-02-11 04:16:31 +0000] [3964] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 39
+    if not (table):
+     ^
+SyntaxError: invalid syntax
+[2020-02-11 04:16:31 +0000] [3964] [INFO] Worker exiting (pid: 3964)
+[2020-02-11 04:16:31 +0000] [3959] [INFO] Shutting down: Master
+[2020-02-11 04:16:31 +0000] [3959] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:17:10 +0000] [3974] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:17:10 +0000] [3974] [INFO] Listening at: http://127.0.0.1:8000 (3974)
+[2020-02-11 04:17:10 +0000] [3974] [INFO] Using worker: sync
+[2020-02-11 04:17:10 +0000] [3977] [INFO] Booting worker with pid: 3977
+[2020-02-11 04:17:10 +0000] [3978] [INFO] Booting worker with pid: 3978
+[2020-02-11 04:17:10 +0000] [3979] [INFO] Booting worker with pid: 3979
+[2020-02-11 04:17:32,681] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:17:56,193] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:18:07,739] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:18:43,084] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:21:11,167] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:23:59 +0000] [3974] [INFO] Handling signal: term
+[2020-02-11 04:23:59 +0000] [3977] [INFO] Worker exiting (pid: 3977)
+[2020-02-11 04:23:59 +0000] [3978] [INFO] Worker exiting (pid: 3978)
+[2020-02-11 04:23:59 +0000] [3979] [INFO] Worker exiting (pid: 3979)
+[2020-02-11 04:23:59 +0000] [3974] [INFO] Shutting down: Master
+[2020-02-11 04:24:00 +0000] [4090] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:24:00 +0000] [4090] [INFO] Listening at: http://127.0.0.1:8000 (4090)
+[2020-02-11 04:24:00 +0000] [4090] [INFO] Using worker: sync
+[2020-02-11 04:24:00 +0000] [4093] [INFO] Booting worker with pid: 4093
+[2020-02-11 04:24:00 +0000] [4094] [INFO] Booting worker with pid: 4094
+[2020-02-11 04:24:00 +0000] [4095] [INFO] Booting worker with pid: 4095
+[2020-02-11 04:25:25 +0000] [4090] [INFO] Handling signal: term
+[2020-02-11 04:25:25 +0000] [4093] [INFO] Worker exiting (pid: 4093)
+[2020-02-11 04:25:25 +0000] [4094] [INFO] Worker exiting (pid: 4094)
+[2020-02-11 04:25:25 +0000] [4095] [INFO] Worker exiting (pid: 4095)
+[2020-02-11 04:25:25 +0000] [4090] [INFO] Shutting down: Master
+[2020-02-11 04:25:25 +0000] [4117] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:25:25 +0000] [4117] [INFO] Listening at: http://127.0.0.1:8000 (4117)
+[2020-02-11 04:25:25 +0000] [4117] [INFO] Using worker: sync
+[2020-02-11 04:25:25 +0000] [4120] [INFO] Booting worker with pid: 4120
+[2020-02-11 04:25:25 +0000] [4121] [INFO] Booting worker with pid: 4121
+[2020-02-11 04:25:26 +0000] [4122] [INFO] Booting worker with pid: 4122
+[2020-02-11 04:25:29,825] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:25:55,063] ERROR in app: Exception on /read/all [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 28, in read_all
+    if table == researchers:
+NameError: name 'researchers' is not defined
+[2020-02-11 04:26:54 +0000] [4117] [INFO] Handling signal: term
+[2020-02-11 04:26:54 +0000] [4120] [INFO] Worker exiting (pid: 4120)
+[2020-02-11 04:26:55 +0000] [4121] [INFO] Worker exiting (pid: 4121)
+[2020-02-11 04:26:55 +0000] [4122] [INFO] Worker exiting (pid: 4122)
+[2020-02-11 04:26:55 +0000] [4117] [INFO] Shutting down: Master
+[2020-02-11 04:26:55 +0000] [4145] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:26:55 +0000] [4145] [INFO] Listening at: http://127.0.0.1:8000 (4145)
+[2020-02-11 04:26:55 +0000] [4145] [INFO] Using worker: sync
+[2020-02-11 04:26:55 +0000] [4148] [INFO] Booting worker with pid: 4148
+[2020-02-11 04:26:55 +0000] [4149] [INFO] Booting worker with pid: 4149
+[2020-02-11 04:26:55 +0000] [4150] [INFO] Booting worker with pid: 4150
+[2020-02-11 04:29:50 +0000] [4145] [INFO] Handling signal: term
+[2020-02-11 04:29:50 +0000] [4148] [INFO] Worker exiting (pid: 4148)
+[2020-02-11 04:29:50 +0000] [4149] [INFO] Worker exiting (pid: 4149)
+[2020-02-11 04:29:50 +0000] [4150] [INFO] Worker exiting (pid: 4150)
+[2020-02-11 04:29:50 +0000] [4145] [INFO] Shutting down: Master
+[2020-02-11 04:29:51 +0000] [4199] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:29:51 +0000] [4199] [INFO] Listening at: http://127.0.0.1:8000 (4199)
+[2020-02-11 04:29:51 +0000] [4199] [INFO] Using worker: sync
+[2020-02-11 04:29:51 +0000] [4202] [INFO] Booting worker with pid: 4202
+[2020-02-11 04:29:51 +0000] [4202] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:51 +0000] [4202] [INFO] Worker exiting (pid: 4202)
+[2020-02-11 04:29:51 +0000] [4203] [INFO] Booting worker with pid: 4203
+[2020-02-11 04:29:51 +0000] [4203] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:51 +0000] [4203] [INFO] Worker exiting (pid: 4203)
+[2020-02-11 04:29:51 +0000] [4204] [INFO] Booting worker with pid: 4204
+[2020-02-11 04:29:51 +0000] [4204] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:51 +0000] [4204] [INFO] Worker exiting (pid: 4204)
+[2020-02-11 04:29:51 +0000] [4199] [INFO] Shutting down: Master
+[2020-02-11 04:29:51 +0000] [4199] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:29:52 +0000] [4205] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:29:52 +0000] [4205] [INFO] Listening at: http://127.0.0.1:8000 (4205)
+[2020-02-11 04:29:52 +0000] [4205] [INFO] Using worker: sync
+[2020-02-11 04:29:52 +0000] [4208] [INFO] Booting worker with pid: 4208
+[2020-02-11 04:29:52 +0000] [4208] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:52 +0000] [4208] [INFO] Worker exiting (pid: 4208)
+[2020-02-11 04:29:52 +0000] [4205] [INFO] Shutting down: Master
+[2020-02-11 04:29:52 +0000] [4205] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:29:54 +0000] [4209] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:29:54 +0000] [4209] [INFO] Listening at: http://127.0.0.1:8000 (4209)
+[2020-02-11 04:29:54 +0000] [4209] [INFO] Using worker: sync
+[2020-02-11 04:29:54 +0000] [4212] [INFO] Booting worker with pid: 4212
+[2020-02-11 04:29:54 +0000] [4212] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:54 +0000] [4212] [INFO] Worker exiting (pid: 4212)
+[2020-02-11 04:29:54 +0000] [4213] [INFO] Booting worker with pid: 4213
+[2020-02-11 04:29:54 +0000] [4213] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:54 +0000] [4213] [INFO] Worker exiting (pid: 4213)
+[2020-02-11 04:29:55 +0000] [4209] [INFO] Shutting down: Master
+[2020-02-11 04:29:55 +0000] [4209] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:29:58 +0000] [4216] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:29:58 +0000] [4216] [INFO] Listening at: http://127.0.0.1:8000 (4216)
+[2020-02-11 04:29:58 +0000] [4216] [INFO] Using worker: sync
+[2020-02-11 04:29:58 +0000] [4219] [INFO] Booting worker with pid: 4219
+[2020-02-11 04:29:58 +0000] [4219] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 30
+    else if table == 'projects':
+          ^
+SyntaxError: invalid syntax
+[2020-02-11 04:29:58 +0000] [4219] [INFO] Worker exiting (pid: 4219)
+[2020-02-11 04:29:58 +0000] [4216] [INFO] Shutting down: Master
+[2020-02-11 04:29:58 +0000] [4216] [INFO] Reason: Worker failed to boot.
+[2020-02-11 04:32:28 +0000] [4252] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:32:28 +0000] [4252] [INFO] Listening at: http://127.0.0.1:8000 (4252)
+[2020-02-11 04:32:28 +0000] [4252] [INFO] Using worker: sync
+[2020-02-11 04:32:28 +0000] [4255] [INFO] Booting worker with pid: 4255
+[2020-02-11 04:32:28 +0000] [4256] [INFO] Booting worker with pid: 4256
+[2020-02-11 04:32:28 +0000] [4257] [INFO] Booting worker with pid: 4257
+[2020-02-11 04:35:08 +0000] [4252] [INFO] Handling signal: term
+[2020-02-11 04:35:08 +0000] [4255] [INFO] Worker exiting (pid: 4255)
+[2020-02-11 04:35:08 +0000] [4256] [INFO] Worker exiting (pid: 4256)
+[2020-02-11 04:35:08 +0000] [4257] [INFO] Worker exiting (pid: 4257)
+[2020-02-11 04:35:08 +0000] [4252] [INFO] Shutting down: Master
+[2020-02-11 04:35:09 +0000] [4292] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:35:09 +0000] [4292] [INFO] Listening at: http://127.0.0.1:8000 (4292)
+[2020-02-11 04:35:09 +0000] [4292] [INFO] Using worker: sync
+[2020-02-11 04:35:09 +0000] [4295] [INFO] Booting worker with pid: 4295
+[2020-02-11 04:35:09 +0000] [4296] [INFO] Booting worker with pid: 4296
+[2020-02-11 04:35:09 +0000] [4297] [INFO] Booting worker with pid: 4297
+[2020-02-11 04:45:41 +0000] [4292] [INFO] Handling signal: term
+[2020-02-11 04:45:41 +0000] [4295] [INFO] Worker exiting (pid: 4295)
+[2020-02-11 04:45:41 +0000] [4296] [INFO] Worker exiting (pid: 4296)
+[2020-02-11 04:45:41 +0000] [4297] [INFO] Worker exiting (pid: 4297)
+[2020-02-11 04:45:41 +0000] [4292] [INFO] Shutting down: Master
+[2020-02-11 04:45:42 +0000] [4415] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:45:42 +0000] [4415] [INFO] Listening at: http://127.0.0.1:8000 (4415)
+[2020-02-11 04:45:42 +0000] [4415] [INFO] Using worker: sync
+[2020-02-11 04:45:42 +0000] [4418] [INFO] Booting worker with pid: 4418
+[2020-02-11 04:45:42 +0000] [4419] [INFO] Booting worker with pid: 4419
+[2020-02-11 04:45:42 +0000] [4420] [INFO] Booting worker with pid: 4420
+[2020-02-11 04:49:27,989] ERROR in app: Exception on /read_researchers [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 89, in read_filter
+    results = cur.execute(query, to_filter).fetchall()
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+[2020-02-11 04:50:09,735] ERROR in app: Exception on /read_researchers [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 89, in read_filter
+    results = cur.execute(query, to_filter).fetchall()
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+[2020-02-11 04:50:13,436] ERROR in app: Exception on /read_researchers [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 89, in read_filter
+    results = cur.execute(query, to_filter).fetchall()
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+[2020-02-11 04:50:24,659] ERROR in app: Exception on /read_researchers [GET]
+Traceback (most recent call last):
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/javirodrigues/miniconda3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/javirodrigues/INFO8000/Assignment3/test_app.py", line 89, in read_filter
+    results = cur.execute(query, to_filter).fetchall()
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+[2020-02-11 04:51:38 +0000] [4415] [INFO] Handling signal: term
+[2020-02-11 04:51:38 +0000] [4418] [INFO] Worker exiting (pid: 4418)
+[2020-02-11 04:51:38 +0000] [4419] [INFO] Worker exiting (pid: 4419)
+[2020-02-11 04:51:38 +0000] [4420] [INFO] Worker exiting (pid: 4420)
+[2020-02-11 04:51:38 +0000] [4415] [INFO] Shutting down: Master
+[2020-02-11 04:51:39 +0000] [4518] [INFO] Starting gunicorn 20.0.4
+[2020-02-11 04:51:39 +0000] [4518] [INFO] Listening at: http://127.0.0.1:8000 (4518)
+[2020-02-11 04:51:39 +0000] [4518] [INFO] Using worker: sync
+[2020-02-11 04:51:39 +0000] [4521] [INFO] Booting worker with pid: 4521
+[2020-02-11 04:51:39 +0000] [4522] [INFO] Booting worker with pid: 4522
+[2020-02-11 04:51:39 +0000] [4523] [INFO] Booting worker with pid: 4523
