@@ -224,3 +224,14 @@
 [2020-02-10 22:49:35 +0000] [31960] [INFO] Booting worker with pid: 31960
 [2020-02-10 22:49:35 +0000] [31961] [INFO] Booting worker with pid: 31961
 [2020-02-10 22:49:35 +0000] [31962] [INFO] Booting worker with pid: 31962
+[2020-02-10 22:51:23 +0000] [31957] [INFO] Handling signal: term
+[2020-02-10 22:51:23 +0000] [31960] [INFO] Worker exiting (pid: 31960)
+[2020-02-10 22:51:23 +0000] [31961] [INFO] Worker exiting (pid: 31961)
+[2020-02-10 22:51:23 +0000] [31962] [INFO] Worker exiting (pid: 31962)
+[2020-02-10 22:51:23 +0000] [31957] [INFO] Shutting down: Master
+[2020-02-10 22:51:23 +0000] [32002] [INFO] Starting gunicorn 20.0.4
+[2020-02-10 22:51:23 +0000] [32002] [INFO] Listening at: http://127.0.0.1:8000 (32002)
+[2020-02-10 22:51:23 +0000] [32002] [INFO] Using worker: sync
+[2020-02-10 22:51:23 +0000] [32005] [INFO] Booting worker with pid: 32005
+[2020-02-10 22:51:23 +0000] [32006] [INFO] Booting worker with pid: 32006
+[2020-02-10 22:51:23 +0000] [32007] [INFO] Booting worker with pid: 32007
