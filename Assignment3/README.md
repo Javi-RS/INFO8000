@@ -30,3 +30,4 @@ If the api-key is not provided, the application returns an UNAUTHORIZED message.
 Also, if there is any problem with the insertion of data (duplicate id, wrong table key...) the application returns an "Adding data" error message.
 ![POST3](/Assignment3/Error_adding_data.jpg?raw=true "Example 3")
 
+
