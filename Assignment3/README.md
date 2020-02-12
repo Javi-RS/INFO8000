@@ -1,8 +1,9 @@
 
-Assignment 3: Develop and Deploy a Web API using NGINX, gunicorn, and Flask
+# Assignment 3: Develop and Deploy a Web API using NGINX, gunicorn, and Flask
 
-The server IP is: 35.188.194.6.
+The server's IP address is: 35.188.194.6
 
+### GET Requests
 The application (test_app.py) implements 2 GET request routes that do different things:
 
   - Using the route http://35.188.194.6/read/all?table=xxxxx all data from the selected table (xxxxxx) is shown.
@@ -14,6 +15,7 @@ Retrieve all values from table:
 Retrieve specific data from researchers table (all the researchers in department1):
 ![GET2](/Assignment3/GET_request_Researchers_in_department1.jpg?raw=true "Example 2")
 
+### POST Requests
 The application implements also 1 POST request routes that do different things:
 
   - By requesting a POST request with the route http://35.188.194.6/addresearcher?id=xx&first_name=xx&last_name=xx&phone=xx&department_id=xx and the appropriate api-key authentication header, we are able to insert a new researcher (id, first_name, last_name, phone, department_id) into the the researchers table.
