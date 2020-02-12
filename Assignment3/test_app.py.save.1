@@ -59,15 +59,19 @@ def read_filter():
   if id:
     query += ' id=? AND'
     to_filter.append(id)
+
   if first_name:
     query += ' first_name=? AND'
     to_filter.append(published)
+
   if last_name:
     query += ' last_name=? AND'
     to_filter.append(author)
+
   if phone:
     query += ' phone=? AND'
     to_filter.append(phone)
+
   if department_id:
     query += ' department_id=? AND'
     to_filter.append(department_id)
@@ -82,32 +86,20 @@ def read_filter():
   cur = conn.cursor()
 
   results = cur.execute(query, to_filter).fetchall()
+
   return jsonify(results)
 
-@app.route('/addresearcher', methods=['POST', 'GET'])
-def addresearcher():
-  if request.method == 'POST':
-    try:
-      query_parameters = request.args
-      first_name = query_parameters.get('first_name')
-      last_name = query_parameters.get('last_name')
-      id = query_parameters.get('id')
-      department_id = query_parameters.get('department_id')
-      phone = query_parameters.get('phone')
+@app.route('/write_researchers', methods=['GET', 'POST'])
+def write_data():
+  query_parameters = request.args
 
-      conn = sqlite3.connect('Assignment2.db')
-      cur = conn.cursor()
-      #results = cur.execute("INSERT INTO researchers VALUES (100,'Casandra',1,'Bacon','701-566-666')")
-      results = cur.execute("INSERT INTO researchers (department_id,first_name,id,last_name,phone) VALUES (?,?,?,?,?)",(int(department_id),first_name,int(id),last_name,phone))
+  id = query_parameters.get('id')
+  first_name = query_parameters.get('first_name')
+  last_name = query_parameters.get('last_name')
+  phone = query_parameters.get('phone')
+  department_id = query_parameters.get('department_id')
 
-      conn.commit()
-      msg = 'Record succesfully added'
-    except:
-      conn.rollback()
-      msg = 'Error adding data'
+  query = "INSERT INTO researchers (id,first_name,last_name,phone,department_id) VALUES ('id', 'first_name','las
+  to_filter = []
 
-    conn.close()
-    return jsonify(int(id))
-  else:
-    return "No a POST method"
-
+INSERT INTO (
