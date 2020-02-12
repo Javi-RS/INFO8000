@@ -12,11 +12,11 @@ def dict_factory(cursor, row):
     return d
 
 @app.route('/', methods=['GET'])
-def fun():
+def fun(secret_key=None):
   return "Please, specify a route: read/all, readresearcher or addresearcher"
 
 @app.route('/read/all', methods=['GET'])
-def read_all():
+def read_all(secret_key=None):
 
   query_parameters = request.args
   table = query_parameters.get('table')
@@ -47,7 +47,7 @@ def page_not_found(e):
   return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
 @app.route('/readresearcher', methods=['GET'])
-def read_filter():
+def read_filter(secret_key=None):
   query_parameters = request.args
 
   id = query_parameters.get('id')
@@ -89,35 +89,40 @@ def read_filter():
 
 @app.route('/addresearcher', methods=['POST', 'GET'])
 def addresearcher():
-  if request.method == 'POST':
-    try:
-      query_parameters = request.args
-      first_name = query_parameters.get('first_name')
-      last_name = query_parameters.get('last_name')
-      id = query_parameters.get('id')
-      department_id = query_parameters.get('department_id')
-      phone = query_parameters.get('phone')
+  #app.cofig['SECRET_KEY'] = '12345678'
+  headers = request.headers
+  auth = headers.get("Api-Key")
+  if auth == '12345678':
+    if request.method == 'POST':
+      try:
+        query_parameters = request.args
+        first_name = query_parameters.get('first_name')
+        last_name = query_parameters.get('last_name')
+        id = query_parameters.get('id')
+        department_id = query_parameters.get('department_id')
+        phone = query_parameters.get('phone')
 
-      conn = sqlite3.connect('Assignment2.db')
-      cur = conn.cursor()
-      results = cur.execute("INSERT INTO researchers (department_id,first_name,id,last_name,phone) VALUES (?,?,?,?,?)",(int(department_id),first_name,int(id),last_name,phone))
+        conn = sqlite3.connect('Assignment2.db')
+        cur = conn.cursor()
+        results = cur.execute("INSERT INTO researchers (department_id,first_name,id,last_name,phone) VALUES (?,?,?,?,?)",(int(department_id),first_name,int(id),last_name,phone))
 
-      conn.commit()
-      msg = 'Record succesfully added'
-      results_read = cur.execute('SELECT * FROM researchers;').fetchall()
-#      results_read = pd.read_sql_query('SELECT * FROM researchers;',conn)
-#      results_read = results_read.to_json()
-#      result_read = pd.json_normalize(results_read)
-#      results_read = cur.execute('SELECT * FROM researchers;').fetchall()
+        conn.commit()
+        msg = 'Record succesfully added'
+        results_read = cur.execute('SELECT * FROM researchers;').fetchall()
+#        results_read = pd.read_sql_query('SELECT * FROM researchers;',conn)
+#        results_read = results_read.to_json()
+#        result_read = pd.json_normalize(results_read)
 
-    except:
-      results_read = conn.rollback()
-      msg = 'Error adding data'
-#      return jsonify(message = msg)
+      except:
+        results_read = conn.rollback()
+        msg = 'Error adding data'
+#        return jsonify(message = msg)
 
-    conn.close()
-    return jsonify(message = msg, new_table = results_read)
+      conn.close()
+      return jsonify(message = msg, new_table = results_read)
 
+    else:
+      return "No a POST method"
   else:
-    return "No a POST method"
+    return "UNAUTHORIZED"
 
