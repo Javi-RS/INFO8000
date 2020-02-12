@@ -25,6 +25,8 @@ And now we can check the modification into the table with the route http://35.18
 ![GET3](/Assignment3/Read_table_modifications.jpg?raw=true "Example 4")
 
 If the api-key is not provided, the application returns an UNAUTHORIZED message.
- 
+![POST2](/Assignment3/Unauthorized_access.jpg?raw=true "Example 3")
 
+Also, if there is any problem with the insertion of data (duplicate id, wrong table key...) the application returns an "Adding data" error message.
+![POST3](/Assignment3/Error_adding_data.jpg?raw=true "Example 3")
 
