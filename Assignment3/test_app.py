@@ -1,7 +1,9 @@
 import sqlite3
+import pandas as pd
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 def dict_factory(cursor, row):
     d = {}
@@ -11,9 +13,7 @@ def dict_factory(cursor, row):
 
 @app.route('/', methods=['GET'])
 def fun():
-#  name = request.args.get("name", "World")
-#  return jsonify({"response":"Hola " + name})
-  return "Please, specify a route: read or write"
+  return "Please, specify a route: read/all, readresearcher or addresearcher"
 
 @app.route('/read/all', methods=['GET'])
 def read_all():
@@ -27,6 +27,8 @@ def read_all():
 
   if table == 'researchers':
     all = cur.execute('SELECT * FROM researchers;').fetchall()
+#    all = pd.read_sql_query('SELECT * FROM researchers;',conn)
+#    all = all.to_json()
   elif table == 'projects':
     all = cur.execute('SELECT * FROM projects;').fetchall()
   elif table == 'departments':
@@ -37,13 +39,14 @@ def read_all():
      all = cur.execute('SELECT * FROM equipment;').fetchall()
   else:
     return "Please, specify the table to show"
+
   return jsonify(all)
 
 @app.errorhandler(404)
 def page_not_found(e):
   return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
-@app.route('/read_researchers', methods=['GET'])
+@app.route('/readresearcher', methods=['GET'])
 def read_filter():
   query_parameters = request.args
 
@@ -97,17 +100,24 @@ def addresearcher():
 
       conn = sqlite3.connect('Assignment2.db')
       cur = conn.cursor()
-      #results = cur.execute("INSERT INTO researchers VALUES (100,'Casandra',1,'Bacon','701-566-666')")
       results = cur.execute("INSERT INTO researchers (department_id,first_name,id,last_name,phone) VALUES (?,?,?,?,?)",(int(department_id),first_name,int(id),last_name,phone))
 
       conn.commit()
       msg = 'Record succesfully added'
+      results_read = cur.execute('SELECT * FROM researchers;').fetchall()
+#      results_read = pd.read_sql_query('SELECT * FROM researchers;',conn)
+#      results_read = results_read.to_json()
+#      result_read = pd.json_normalize(results_read)
+#      results_read = cur.execute('SELECT * FROM researchers;').fetchall()
+
     except:
-      conn.rollback()
+      results_read = conn.rollback()
       msg = 'Error adding data'
+#      return jsonify(message = msg)
 
     conn.close()
-    return jsonify(int(id))
+    return jsonify(message = msg, new_table = results_read)
+
   else:
     return "No a POST method"
 
