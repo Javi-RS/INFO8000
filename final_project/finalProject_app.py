@@ -54,17 +54,15 @@ def greenExtract(img):
     Gnorm = cv.normalize(G, None, 0, 1, cv.NORM_MINMAX, cv.CV_32FC1)
     Bnorm = cv.normalize(B, None, 0, 1, cv.NORM_MINMAX, cv.CV_32FC1)
 
-    #optimum green pixels extraction
-    ExR_opt = 1.0*Rnorm - 0.8*Gnorm;
-    ExG_opt = 1.5*Gnorm - Rnorm - Bnorm;
-    #optimum cotton pixels preprocessing
-    ExR = 2.0*Rnorm - Gnorm;
-    ExG = 1.5*Gnorm - Rnorm - Bnorm;
     #original green extraction
     #ExR = 1.4*Rnorm - Gnorm;
     #ExG = 1.5*Gnorm - Rnorm - Bnorm;
 
     #cotton pixels pre-segmentation
+    #optimum cotton pixels preprocessing
+    ExR = 2.0*Rnorm - Gnorm;
+    ExG = 1.5*Gnorm - Rnorm - Bnorm;
+    
     ExR = cv.normalize(ExR, None, 0, 255, cv.NORM_MINMAX, cv.CV_8U)
     thR, ExR = cv.threshold(ExR, 0, 255, cv.THRESH_OTSU);
     ExR = ExR.astype(np.int16)
@@ -73,13 +71,16 @@ def greenExtract(img):
     thG, ExG = cv.threshold(ExG, 0, 255, cv.THRESH_OTSU);
     ExG = ExG.astype(np.int16)
     
-    NoGreen = cv.normalize(cv.normalize(np.subtract(ExG,ExR) * -1, 
+    img_noGreen = cv.normalize(cv.normalize(np.subtract(ExG,ExR) * -1, 
                             None, 0, 1, cv.NORM_MINMAX) * 255, None, 0,
                             255, cv.NORM_MINMAX,cv.CV_8U)
-    rgb_noGreen = cv.bitwise_and(RGB,RGB,mask = NoGreen)
-    bgr_noGreen = cv.cvtColor(rgb_noGreen, cv.COLOR_RGB2BGR)
-    
+    rgb_cotton = cv.bitwise_and(RGB,RGB,mask = img_noGreen)
+    bgr_cotton = cv.cvtColor(rgb_cotton, cv.COLOR_RGB2BGR)
+
     #green pixels segmentation based on Excess Green index
+    #optimum green pixels extraction
+    ExR_opt = 1.0*Rnorm - 0.8*Gnorm;
+    ExG_opt = 1.5*Gnorm - Rnorm - Bnorm;
     ExR_opt = cv.normalize(ExR_opt, None, 0, 255, cv.NORM_MINMAX, cv.CV_8U)
     thR_opt, ExR_opt = cv.threshold(ExR_opt, 0, 255, cv.THRESH_OTSU);
     ExR_opt = ExR_opt.astype(np.int16)
@@ -88,13 +89,13 @@ def greenExtract(img):
     thG_opt, ExG_opt = cv.threshold(ExG_opt, 0, 255, cv.THRESH_OTSU);
     ExG_opt = ExG_opt.astype(np.int16)
 
-    Green = cv.normalize(cv.normalize(np.subtract(ExG_opt,ExR_opt), 
+    img_green = cv.normalize(cv.normalize(np.subtract(ExG_opt,ExR_opt), 
                             None, 0, 1, cv.NORM_MINMAX) * 255, None, 0,
                             255, cv.NORM_MINMAX,cv.CV_8U)
 
-    rgb_Green = cv.bitwise_and(RGB,RGB,mask = Green)
+    rgb_leaves = cv.bitwise_and(RGB,RGB,mask = img_green)
 
-    return bgr_noGreen, rgb_Green
+    return bgr_cotton, rgb_leaves
 
 def colorSpaces(img):
 # This function performs the color space conversion
@@ -139,9 +140,9 @@ def createValidationDF(HSV,Lab):
     #reduce number of points by deleting not presegmented cotton pixels
     df_temp = df.copy()
     #create pre-segmented cotton pixels datframe
-    cotton = df_temp[(df_temp['H'] > 0)&(df_temp['S'] > 0)&(df_temp['V'] >= 0)] 
+    df_cotton = df_temp[(df_temp['H'] > 0)&(df_temp['S'] > 0)&(df_temp['V'] >= 0)] 
 
-    return df, cotton   
+    return df, df_cotton   
     
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -161,65 +162,63 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            
+            #load SVM classification model
             clf = joblib.load('./SVM_model_HSVab.pkl')
             
-            # Initialize dataframe
-            data = pd.DataFrame(columns=['row', 'col','H','S','V','L','a','b'])
-
             # Read image
             img = cv.imread(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 
             # Create dataframe
             #green pixels preprocecssing extraction
-            image, image_green = greenExtract(img)
+            image_cotton, image_leaves = greenExtract(img)
                      
-            # Store green pixels mask (leaves)
-            leaves_name = os.path.splitext(file.filename)[0] + '_green.png'
-            leaves = Image.fromarray(image_green)
+            # Save green pixels mask (leaves)
+            leaves_filename = os.path.splitext(file.filename)[0] + '_leaves.png'
+            leaves = Image.fromarray(image_leaves)
             leaves.save(os.path.join(app.config['UPLOAD_FOLDER'],
-                                     leaves_name))
+                                     leaves_filename))
             
             #color spaces creation
-            HSV,Lab = colorSpaces(image)
+            HSV,Lab = colorSpaces(image_cotton)
             #create dataframe for validation
-            data, cotton_data = createValidationDF(HSV,Lab)
-    
+            full_data, cotton_data = createValidationDF(HSV,Lab)
+            
             # Results verification
-            # Create copy of the dataframe
-            df = data.copy()
             # Drop pixel position columns (row, and col), and L column
-            X = df.drop(['row','col','L'], axis = 1)
+            X = cotton_data.drop(['row','col','L'], axis = 1)
 
             # Apply SVM model for pixels classification    
             y_pred = clf.predict(X)
             
             # Create prediction mask
-            pred_mask = y_pred.copy()
-            pred_mask[pred_mask=='no'] = 0
-            pred_mask[pred_mask=='yes'] = 255
+            # Create prediction mask
+            cotton_df = cotton_data.copy()
             #recover pixel indices
-            #pred_mask['row'] = df['row']
-            #pred_mask['col'] = df['col']
-            #reconstruct image
-            #s1.update(data)
-            #delete pixel indices          
-            #pred_mask.drop(['row','col'], axis = 1)
-            
+            cotton_df.insert(0,'cotton', y_pred, True)
+            cotton_df = pd.DataFrame(cotton_df.iloc[:,0])
+            cotton_df[cotton_df['cotton']=='no'] = 0
+            cotton_df[cotton_df['cotton']=='yes'] = 255
+
+            #reconstruct image dataframe
+            full_mask = full_data.copy()
+            full_mask['cotton']=0
+            full_mask = pd.DataFrame(full_mask.iloc[:,-1])
+            #substitute values with cotton prediction values
+            full_mask.update(cotton_df)
             # Change the dtype to 'uint8'
-            mask_ = pred_mask.astype('uint8')
+            full_mask = (full_mask.astype('uint8')).to_numpy()
             # Convert from array to image pixels
-            h,w,c = image.shape
-            mask_result = np.reshape(mask_,(h,w))
-            np.savetxt(os.path.join(app.config['UPLOAD_FOLDER'],
-                        (os.path.splitext(file.filename)[0] + '.csv')),
-                        mask_result, fmt='%i', delimiter=",")
+            h,w,c = image_cotton.shape
+            mask_result = np.reshape(full_mask,(h,w))
+            #np.savetxt(os.path.join(app.config['UPLOAD_FOLDER'],
+            #            (os.path.splitext(file.filename)[0] + '.csv')),
+            #            mask_result, fmt='%i', delimiter=",")
     
             # Store resulting image mask
-            mask_result_name = os.path.splitext(file.filename)[0] + '_seg.png'
+            cotton_filename = os.path.splitext(file.filename)[0] + '_seg.png'
             cotton = Image.fromarray(mask_result)
             cotton.save(os.path.join(app.config['UPLOAD_FOLDER'],
-                                     mask_result_name))
+                                     cotton_filename))
             
             return redirect(url_for('uploaded_file', filename=filename))
     
