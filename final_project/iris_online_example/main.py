@@ -56,7 +56,7 @@ def main():
     return render_template("main.html")
 
 # this function adds a row to the dataset and retrains
-@app.route("/run_observation",methods=["POST"])
+@app.route("/run_obs'ervation",methods=["POST"])
 def add_data():
     global df
     global clf
