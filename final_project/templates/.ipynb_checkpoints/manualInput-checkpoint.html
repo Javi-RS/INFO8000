@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <title>New Data Input</title>
+        <h1>Manual data input</h1>   
+        <table>
+            <form action = "data_input_method" method="POST">
+            Change input method
+                <select name="method">
+                    <option value="Analysis">Image analysis</option>     
+                </select>
+                <button class="button execute" name="submit" value="submit">Submit</button>
+            </form>
+        </table>
+        <form action = "data_input" method="POST">
+            <br><label for="plot_name">Plot ID:</label><br>
+            <input name="plot_name" type="text" id="plot_name">
+            <br><label for="new_data">New Data:</label><br>
+            <input name="new_data" type="text" id="new_data"><br><br>
+            <button class="button execute" name="submit" value="submit">Submit Data</button>
+        </form>
+   </body>
+</html>

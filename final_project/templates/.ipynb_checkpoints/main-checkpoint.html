@@ -1,20 +1,17 @@
 <html>
     <body>
         <title>Upload New Image</title>
-            <h1>Image Upload</h1>
-            <form method=post enctype=multipart/form-data>
-            <form action = "run_observation" method = "POST" 
-             enctype = "multipart/form-data">
-                 <input type=file name=file>
-                <input type=submit value=Upload>
-            </form>    
+            <h1>Cotton Yield Estimation</h1>    
             <table>
-                <tr><td>Select Visualization<td><select name="method">
-                    <option value="Cotton">Cotton</option>
-                    <option value="Leaves">Leaves</option>
-                    <option value="Entire plot">Plot</option>
-                </select></tr>
+                <form action = "data_input_method" method="POST">
+                    Select data input method
+                        <select name="method">
+                            <option selected>Select an option</option>
+                            <option value="Manual">Manual input (default)</option>
+                            <option value="Analysis">Image analysis</option>     
+                        </select>
+                    <button class="button execute" name="submit" value="submit">Submit</button>
+                </form>
             </table>
-      </form>   
    </body>
 </html>

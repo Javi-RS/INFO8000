@@ -1,16 +1,15 @@
-from flask import Flask, flash, request, render_template, redirect, url_for, send_from_directory
+from flask import Flask, request, make_response, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 from sklearn.externals import joblib
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import cv2 as cv
 from PIL import Image
 import os
 from io import BytesIO
 import base64
-import sys
-import matplotlib.pyplot as plt
-import seaborn as sns
 import csv
 
 sns.set()
@@ -98,7 +97,6 @@ def colorSpaces(img):
     Lab=cv.cvtColor(img,cv.COLOR_BGR2LAB)
     #display(Image.fromarray(Lab))
     #L,a,b = cv.split(Lab)
-    
     return (HSV,Lab)
 
 # Function to create the dataset for SVM pixels classification
@@ -130,35 +128,35 @@ def createValidationDF(HSV,Lab):
     df_temp = df.copy()
     #create pre-segmented cotton pixels datframe
     df_cotton = df_temp[(df_temp['H'] > 0)&(df_temp['S'] > 0)&(df_temp['V'] >= 0)] 
-
     return df, df_cotton   
 
-# Useful function that gets the current figure as a base 64 image for embedding into websites
+# Function that gets the current figure as a base 64 image for embedding into websites
 def getCurrFigAsBase64HTML(fig):
     im_buf_arr = BytesIO()
-    fig.savefig(im_buf_arr,format='png')
+    fig.savefig(im_buf_arr,format='png',bbox_inches='tight')
     im_buf_arr.seek(0)
     b64data = base64.b64encode(im_buf_arr.read()).decode('utf8');
-    return render_template('img.html',img_data=b64data) 
+    return b64data
+    #return render_template('img.html',img_data=b64data) 
 
-# Function to store in the dataset extracted data from an image
-def add_data(data):
+# Function to store data into the dataset
+def add_data(data_in):
     global data_df
-    data_df = pd.concat([data_df,data],ignore_index=True)
-    ax = sns.barplot(x = "plot_id", y = "boll number", data = data_df, color='green')
+    plt.clf()
+    # Store predicted pixel number into the csv file
+    with open('data.csv', 'a+', newline='') as write_obj:
+        csv_writer = csv.writer(write_obj,delimiter=',',lineterminator='\n')
+        csv_writer.writerow([data_in.loc[0]["plot_id"], data_in.loc[0]["boll number"]])
+    data_df = pd.concat([data_df,data_in],ignore_index=True)
+    fig2 = sns.barplot(x = "plot_id", y = "boll number", data = data_df, color='green')
     plt.xticks(rotation='vertical')
     plt.tight_layout()
-    ax.set(xlabel="Plots", ylabel = "Cotton pixels")
+    fig2.set(xlabel="Plot ID", ylabel = "Cotton bolls")
     fig=plt.gcf()
-    img_html = getCurrFigAsBase64HTML(fig);
-    return "Added new sample " + "<pre>"+ data_df.to_string() \
-            + "</pre><br> ... <br><br>" + img_html
-    
-   #if is_test != "no":
-   #     obs = pd.DataFrame([[sepal_length,sepal_width,petal_length,petal_width]],
-   #                        columns=["sepal.length","sepal.width","petal.length","petal.width"])
- 
-#    return "not implemented"
+    img_data = getCurrFigAsBase64HTML(fig);
+    # render dataframe as html
+    data_html = data_df.to_html()
+    return render_template('done.html', table=data_html, graph=img_data)
 
 def init():
     global data_df
@@ -172,35 +170,68 @@ try:
     
 except:
     init()
-    
-# This method resets/initializes the database when called
+        
+# This method resets/initializes the database when called. It is password protected
 @app.route("/reset")
 def reset():
-    # Delete database content using w+ (truncate file to 0 size)
-    f = open('data.csv', "w+")
-    f.close()
-    # Initialize database headers
-    with open('data.csv', 'w+', newline='') as write_obj:
-        # Create a writer object from csv module
-        csv_writer = csv.writer(write_obj,delimiter=',',lineterminator='\n')
-        # Add contents of list as last row in the csv file
-        csv_writer.writerow(['plot_id','boll number'])
-        
-    init()
-    return "reset model"
-    
-# show an interface to upload an image and select visualization method
+    return render_template("reset.html")
+# Method asking for reset confirmation (it requires user and password)
+@app.route("/reset_confirmation", methods=["GET"])
+def reset_confirmation():
+    if request.authorization and request.authorization.username == "user" and request.authorization.password == "pass":
+        # Delete database content using w+ (truncate file to 0 size)
+        f = open('data.csv', "w+")
+        f.close()
+        # Initialize database headers
+        with open('data.csv', 'w+', newline='') as write_obj:
+            # Create a writer object from csv module
+            csv_writer = csv.writer(write_obj,delimiter=',',lineterminator='\n')
+            # Add contents of list as last row in the csv file
+            csv_writer.writerow(['plot_id','boll number'])
+        init()
+        return "Database reset"
+    return make_response("Unauthorized Access", 401, {'WWW-Authenticate' : 'Basic realm="Login Required"'})
+
+# Show main screen
 @app.route("/")
 def main():
     return render_template("main.html")
 
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
-    return send_from_directory(app.config["UPLOAD_FOLDER"],
-                               filename)
+# Redirect to the interface associated to the selected method (manual or image analysis)
+@app.route("/data_input_method", methods=["POST"])
+def data_input_method():
+    global method
+    method1 = request.form["method"]
+    if method1 == "Analysis":
+        return render_template("imgAnalysis.html")
+    else:
+        return render_template("manualInput.html",data1="0",data2="0") 
+    
+# Show interface to enter data manually
+@app.route("/data_input", methods=["POST"])
+def data_input():
+    global newdata_df
+    plot_name = request.form["plot_name"]
+    new_data = request.form["new_data"]
+    new_data_msg =plot_name+', '+new_data
+    newdata_df = pd.DataFrame([[plot_name,int(new_data)]],columns=['plot_id','boll number'])
+    msg = add_data(newdata_df)
+    return msg
 
+# Store uploaded image
+#@app.route("/uploads/<filename>")
+#def uploaded_file(filename):
+#    return send_from_directory(app.config["UPLOAD_FOLDER"],
+#                               filename)
+
+# Previsualize image for confirmation
 @app.route("/img_upload", methods=["POST"])
 def upload_file():
+    global newdata_df
+    global file
+    global image
+    global image_web
+    
     # check if the image has been included in the request
     if "file" not in request.files:
         return error
@@ -213,79 +244,131 @@ def upload_file():
         
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #load SVM classification model
-        #clf = joblib.load('./SVM_model_HSVab.pkl')
-        
+         
         # Extract the name of the file including its extension
         fileName = os.path.basename(file.filename)
         # Use splitext() to get filename and extension separately.
         (name, ext) = os.path.splitext(fileName)
     
         # Read image
-        img = cv.imread(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                
-        # Create dataframe
-        #green pixels preprocecssing extraction
-        image_cotton, image_leaves = greenRemoval(img)
-                     
-        # Save green pixels mask (leaves)
-        leaves_filename = os.path.splitext(file.filename)[0] + '_leaves.png'
-        leaves = Image.fromarray(image_leaves)
-        leaves.save(os.path.join(app.config['UPLOAD_FOLDER'], leaves_filename))
-            
-        #color spaces creation
-        HSV,Lab = colorSpaces(image_cotton)
-        #create dataframe for validation
-        full_data, cotton_data = createValidationDF(HSV,Lab)
-            
-        # Results verification
-        # Drop pixel position columns (row, and col), and L column
-        X = cotton_data.drop(['row','col','L'], axis = 1)
-
-        # Apply SVM model for pixels classification    
-        y_pred = clf.predict(X)
-            
-        # Create prediction mask
-        # Create prediction mask
-        cotton_df = cotton_data.copy()
-        #recover pixel indices
-        cotton_df.insert(0,'cotton', y_pred, True)
-        cotton_df = pd.DataFrame(cotton_df.iloc[:,0])
-        cotton_df[cotton_df['cotton']=='no'] = 0
-        cotton_df[cotton_df['cotton']=='yes'] = 255
-
-        # Reconstruct image dataframe
-        full_mask = full_data.copy()
-        full_mask['cotton']=0
-        full_mask = pd.DataFrame(full_mask.iloc[:,-1])
-        #substitute values with cotton prediction values
-        full_mask.update(cotton_df)
-        # Change the dtype to 'uint8'
-        full_mask = (full_mask.astype('uint8')).to_numpy()
-        # Convert from array to image pixels
-        h,w,c = image_cotton.shape
-        mask_result = np.reshape(full_mask,(h,w))
-           
-        # Store resulting image mask
-        cotton_filename = os.path.splitext(file.filename)[0] + '_cotton.png'
-        cotton = Image.fromarray(mask_result)
-        cotton.save(os.path.join(app.config['UPLOAD_FOLDER'], cotton_filename))
+        imgstream = file.read()
+        # Convert string data to numpy array
+        npimg = np.fromstring(imgstream, np.uint8)
+        # Convert numpy array to image
+        image = cv.imdecode(npimg, cv.IMREAD_UNCHANGED)
+        img_ = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+        fig0 = plt.imshow(img_)
+        plt.axis('off')
+        img_ = plt.gcf()
+        image_web = getCurrFigAsBase64HTML(img_)
         
-        # Count number of cotton pixels found in the image
-        cottonPx_number = np.count_nonzero(mask_result)
-        # Use linear regression model coefficients (intercept and slope) to calculate number of cotton bolls
-        boll_number = round(0.009008599788066408*cottonPx_number + 48.19938481068874)
-        
-        # Store predicted pixel number into the csv file
-        with open('data.csv', 'a+', newline='') as write_obj:
-            csv_writer = csv.writer(write_obj,delimiter=',',lineterminator='\n')
-            csv_writer.writerow([os.path.splitext(file.filename)[0], boll_number])
-        
-        plot_df = pd.DataFrame([[os.path.splitext(file.filename)[0],boll_number]],columns=['plot_id','boll number'])
-        msg = add_data(plot_df)
-        return msg
+        return render_template("imgConfirmation.html", data1=name ,img=image_web)
     return error
+
+# Process image
+@app.route("/img_confirmation", methods=['POST'])
+def img_confirmation():
+    global file
+    global image
+    global image_web
+    
+    # Read name from form
+    plot_name = request.form["plot_name_conf"]
+    
+    # Extract the name of the file including its extension
+    fileName = os.path.basename(file.filename)
+    # Use splitext() to get filename and extension separately.
+    (name, ext) = os.path.splitext(fileName)
+    
+    # Store original image
+    cv.imwrite(os.path.join(app.config['UPLOAD_FOLDER'], (plot_name + ext)), image);
+    
+    # Read image
+    img = cv.imread(os.path.join(app.config['UPLOAD_FOLDER'], plot_name + ext))
+    # Create dataframe
+    #green pixels preprocecssing extraction
+    image_cotton, image_leaves = greenRemoval(img)
+                    
+    # Save green pixels mask (leaves)
+    leaves_filename = os.path.splitext(file.filename)[0] + '_leaves.png'
+    leaves = Image.fromarray(image_leaves)
+    leaves.save(os.path.join(app.config['UPLOAD_FOLDER'], leaves_filename))
+          
+    # Color spaces creation
+    HSV,Lab = colorSpaces(image_cotton)
+    # Create dataframe for validation
+    full_data, cotton_data = createValidationDF(HSV,Lab)
+          
+    # SVM pixels classification
+    # Drop pixel position columns (row, and col), and L column
+    X = cotton_data.drop(['row','col','L'], axis = 1)
+    # Apply SVM model    
+    y_pred = clf.predict(X)
+            
+    # Create prediction mask
+    cotton_df = cotton_data.copy()
+    # Recover pixel indices
+    cotton_df.insert(0,'cotton', y_pred, True)
+    cotton_df = pd.DataFrame(cotton_df.iloc[:,0])
+    cotton_df[cotton_df['cotton']=='no'] = 0
+    cotton_df[cotton_df['cotton']=='yes'] = 255
+
+    # Reconstruct image dataframe
+    full_mask = full_data.copy()
+    full_mask['cotton']=0
+    full_mask = pd.DataFrame(full_mask.iloc[:,-1])
+    # Substitute values with cotton prediction values
+    full_mask.update(cotton_df)
+    # Change the dtype to 'uint8'
+    full_mask = (full_mask.astype('uint8')).to_numpy()
+    # Convert from array to image pixels
+    h,w,c = image_cotton.shape
+    mask_result = np.reshape(full_mask,(h,w))
+           
+    # Store resulting image mask
+    cotton_filename = os.path.splitext(file.filename)[0] + '_cotton.png'
+    cotton_img = Image.fromarray(mask_result)
+    cotton_img.save(os.path.join(app.config['UPLOAD_FOLDER'], cotton_filename))
+    
+    img_ = cv.imread(os.path.join(app.config['UPLOAD_FOLDER'], cotton_filename))
+    # Overlay cotton contours on original image
+    img_gray = cv.cvtColor(img_, cv.COLOR_BGR2GRAY)
+    # Run findContours - Note the RETR_EXTERNAL flag
+    # Also, we want to find the best contour possible with CHAIN_APPROX_NONE
+    contours, hierarchy = cv.findContours(img_gray.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_TC89_KCOS)
+    # Create an output of all zeroes that has the same shape as the input image
+    out = np.zeros_like(img_gray)
+    # Draw all of the contours that we have detected in white, and set the thickness to be 1 pixels
+    image_ = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+    cv.drawContours(image_, contours, -1, (0, 255, 0), 2) 
+    #cv.imshow('Contours', image)
+    #img_overlay = cv.bitwise_and(RGB,RGB,mask = img_green)
+    #img_ = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+    fig2 = plt.imshow(image_)
+    plt.axis('off')
+    img_ = plt.gcf()  
+    image_web2 = getCurrFigAsBase64HTML(img_)
+        
+    # Count number of cotton pixels found in the image
+    cottonPx_number = np.count_nonzero(mask_result)
+    # Use linear regression model coefficients (intercept and slope) to calculate number of cotton bolls
+    boll_number = round(0.009008599788066408*cottonPx_number + 48.19938481068874)
+        
+    plot_data = os.path.splitext(file.filename)[0]+ "," + str(boll_number)
+    newdata_df = pd.DataFrame([[os.path.splitext(file.filename)[0],boll_number]],columns=['plot_id','boll number'])
+
+    return render_template("dataConfirmation.html", data1=os.path.splitext(file.filename)[0], data2=str(boll_number), img_orig=image_web, img=image_web2)
+
+# Show interface to confirm data automatically extrated from the uploaded image
+@app.route("/data_confirmation", methods=["POST"])
+def data_confirmation():
+    global newdata_df
+    plot_name = request.form["plot_name_conf"]
+    new_data = request.form["new_data_conf"]
+    new_data_msg =plot_name+', '+new_data
+    newdata_df = pd.DataFrame([[plot_name,int(new_data)]],columns=['plot_id','boll number'])
+    msg = add_data(newdata_df)
+    return msg
 
 if __name__ == '__main__':
     app.run(port=8080)

@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <title>Upload New Image</title>
+        <h1>Cotton Yield Estimation</h1><hr> 
+        <h2>Image to upload:</h2>
+        <table>
+            <div style="font-size:0;">
+                <img src="data:image/png;base64, {{img}}" style="text-align: left" width="1000"/>
+            </div>
+            Modify name if needed
+            <br><form action = "img_confirmation" method="POST">
+                <br><label for="plot_name_conf">Plot ID:</label>
+                <p><input name="plot_name_conf" type="text" id="plot_name" value={{data1}}></p>
+                <input type="submit" value="Process image">
+            </form>
+            <form action = "img_upload" method="POST" enctype= "multipart/form-data">
+                <br><br><label for="plot_name">Do you want to change the image?</label><br>       
+                <br><input type="file" name="file">
+                <input type="submit" value="Change image">
+            </form>
+        </table>
+   </body>
+</html>

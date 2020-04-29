@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <title>Upload New Image</title>
+        <h1>Image upload</h1>
+        <table>
+            <form action = "data_input_method" method="POST">
+            Change input method
+                <select name="method">
+                    <option value="Manual">Manual input</option>     
+                </select>
+                <button class="button execute" name="submit" value="submit">Submit</button>
+            </form>
+        </table>
+        <form action = "img_upload" method="POST" enctype= "multipart/form-data">
+            <br><label for="plot_name">Plot</label><br>       
+            <input type="file" name="file">
+            <input type="submit" value="Upload Image">
+        </form>
+   </body>
+</html>

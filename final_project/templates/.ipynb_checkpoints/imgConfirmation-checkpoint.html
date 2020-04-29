@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <title>New Data Input</title>
+        <h1>Cotton Yield Estimation</h1><hr> 
+        <h2>Data confirmation!</h2>
+        <div style="font-size:0;">
+            <img src="data:image/png;base64, {{img}}" style="text-align: left" width="1000"/>
+        </div>
+        Modify data if needed
+        <form action = "data_confirmation" method="POST">
+            <br><label for="plot_name_conf">Plot ID:</label><br>
+            <p><input name="plot_name_conf" type="text" id="plot_name" value={{data1}}></p>
+            <label for="new_data_conf">Cotton bolls number:</label><br>
+            <p><input name="new_data_conf" type="text" id="new_data_conf" value={{data2}}></p>
+            <button class="button execute" name="submit" value="submit">Submit Data</button>
+            
+        </form>
+   </body>
+</html>
