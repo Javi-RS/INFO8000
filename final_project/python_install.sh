@@ -1,4 +1,4 @@
-#!bash
+#!/bin/bash
 
 pip install virtualenv
 virtualenv foss_groupF
@@ -14,5 +14,6 @@ pip install PIL==1.1.6
 pip install os==0.2.14
 pip install base64
 pip install opencsv==4.2.0.34
+pip install opencv-contrib-python
 
 
